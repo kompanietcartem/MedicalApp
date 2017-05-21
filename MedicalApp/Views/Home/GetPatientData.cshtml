@@ -1,0 +1,17 @@
+﻿@using MedicalApp.Models
+@model IEnumerable<Research>
+
+@{
+    Layout = null;
+    AjaxOptions ajaxOptions = new AjaxOptions
+    {
+        UpdateTargetId = "researchDiv",
+        LoadingElementDuration = 200,
+        LoadingElementId = "loading"
+    };
+}
+
+@foreach (Research research in Model)
+{
+    @Ajax.ActionLink(research.Info, "GetResearchData", new { patientId = ViewBag.PatientId, researchId = research.Id }, ajaxOptions, new { @class = "linkItem" })
+}

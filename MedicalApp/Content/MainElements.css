@@ -1,0 +1,30 @@
+﻿body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header {
+    text-align: center;
+    width: 100%;
+    min-width: 1000px;
+    height: 80px;
+    line-height: 80px;
+    margin-bottom: 10px;
+    background-color: darkseagreen;
+}
+
+.leftMenu {
+    float: left;
+    margin-right: 10px;
+    width: 200px;
+}
+
+.menuItem {
+    display: flex;
+    padding: 8px 20px 8px;
+    text-align: center;
+    background-color: rgb(187,232,187);
+}
+
+.menuItem:hover {
+    background-color: rgb(204,249,204);
+}

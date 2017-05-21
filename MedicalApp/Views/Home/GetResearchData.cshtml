@@ -1,0 +1,15 @@
+﻿@model string
+
+@{
+    Layout = null;
+    AjaxOptions ajaxOptions = new AjaxOptions
+    {
+        UpdateTargetId = "researchDiv",
+        LoadingElementDuration = 200,
+        LoadingElementId = "loading"
+    };
+}
+
+@Ajax.ActionLink("назад", "GetPatientData", new { patientId = ViewBag.PatientId }, ajaxOptions, new { @class = "backLink" })
+
+<p class="patient_parag">@Model</p>

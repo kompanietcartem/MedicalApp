@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/Content/MainElements.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Styles.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Scrollbar.css" rel="stylesheet" type="text/css" />
+
+    <script src="~/Scripts/jquery-3.1.1.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h2 style="color: white">MEDICAL APPLICATION</h2>
+    </div>
+
+    <div style="width: 1000px; margin: auto">
+        <div class="leftMenu">
+            @Html.ActionLink("Главная", "Index", "Home", new { @class = "menuItem", style = "border-top-left-radius: 7px; border-top-right-radius: 7px;" })
+            @Html.ActionLink("Пациенты", "Index", "Home", new { @class = "menuItem" })
+            @Html.ActionLink("Пункт 3", "Index", "Home", new { @class = "menuItem" })
+            @Html.ActionLink("Пункт 4", "Index", "Home", new { @class = "menuItem" })
+            @Html.ActionLink("Пункт 5", "Index", "Home", new { @class = "menuItem" })
+            @Html.ActionLink("Пункт 6", "Index", "Home", new { @class = "menuItem", style = "border-bottom-left-radius: 7px; border-bottom-right-radius: 7px;" })
+        </div>
+
+        <div>
+            @RenderBody()
+        </div>
+    </div>
+
+</body>
+</html>

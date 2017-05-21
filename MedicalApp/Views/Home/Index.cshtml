@@ -1,0 +1,29 @@
+﻿@using MedicalApp.Models;
+@model IEnumerable<Patient>
+
+@{
+    ViewBag.Title = "Пациенты";
+    AjaxOptions ajaxOptions = new AjaxOptions
+    {
+        UpdateTargetId = "researchDiv",
+        LoadingElementDuration = 200,
+        LoadingElementId = "loading"
+    };
+}
+
+<div class="patients">
+    @foreach (Patient patient in Model)
+    {
+        <div style="margin-bottom:10px">
+            @Ajax.ActionLink(String.Format("{0} {1} {2}", patient.Surname, patient.Name, patient.Patronymic), "GetPatientData", new { patientId = patient.Id }, ajaxOptions, new { @class = "linkItem" })
+            <font style="margin-left: 10px; color: grey; font-size: smaller">Дата рождения: @String.Format("{0}.{1}.{2}г.", patient.DateOfBirth.Day, patient.DateOfBirth.Month, patient.DateOfBirth.Year)</font>
+        </div>
+    }
+</div>
+
+<div class="list">
+    <p id="loading" class="load" style="display: none; text-align: center">Загрузка данных...</p>
+    <div id="researchDiv">
+        <p style="text-align: center">Выберите пациента</p>
+    </div>
+</div>
